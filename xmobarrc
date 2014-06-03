@@ -13,7 +13,7 @@ Config { font = "-misc-fixed-*-*-*-*-10-*-*-*-*-*-*-*"
                     , Run Cpu ["-L","3","-H","50","--normal","green","--high","red"] 10
                     , Run Memory ["-t","Mem: <usedratio>%"] 10
                     , Run Swap [] 10
-                    , Run Battery ["-t","<leftbar> (<watts>W / <timeleft>) <acstatus>","-L","50","-H","75","-h","green","-l","red"] 10
+                    , Run Battery ["-t","<leftbar> (<watts>W / <timeleft>) <acstatus>","-L","15","-H","50","-h","green","-l","red","-n","yellow","--","-O","CHG","-i","AC","-o","BAT"] 10
                     , Run Date "%a %b %_d %Y %H:%M:%S" "date" 10
                     , Run Wireless "wlan0" ["-t", "<essid>(<quality>%)"] 10
                     , Run CoreTemp ["-t", "Temp:<core0>C",
