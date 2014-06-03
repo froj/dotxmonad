@@ -13,13 +13,14 @@ Config { font = "-misc-fixed-*-*-*-*-10-*-*-*-*-*-*-*"
                     , Run Cpu ["-L","3","-H","50","--normal","green","--high","red"] 10
                     , Run Memory ["-t","Mem: <usedratio>%"] 10
                     , Run Swap [] 10
-                    , Run Battery ["-t","<left>% / <timeleft>","-L","50","-H","75","-h","green","-n","yell","-l","red"] 10
+                    , Run Battery ["-t","<leftbar> (<watts>W / <timeleft>) <acstatus>","-L","50","-H","75","-h","green","-l","red"] 10
                     , Run Date "%a %b %_d %Y %H:%M:%S" "date" 10
+                    , Run Wireless "wlan0" ["-t", "<essid>(<quality>%)"] 10
                     , Run CoreTemp ["-t", "Temp:<core0>C",
                        "-L", "40", "-H", "60",
                        "-l", "lightblue", "-n", "gray90", "-h", "red"] 50
                     ]
        , sepChar = "%"
        , alignSep = "}{"
-       , template = "%battery% | %cpu% | %coretemp% |  %memory% * %swap% | %eth0% - %wlan0% }{ <fc=#ee9a00>%date%</fc>"
+       , template = "%battery% | %cpu% | %coretemp% | %memory% * %swap% | %wlan0% %wlan0wi% - %eth0% }{ <fc=#ee9a00>%date%</fc>"
        }
