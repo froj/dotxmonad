@@ -21,6 +21,7 @@ keyBindings = [
 startup = do
     spawn "dispwin /etc/out.icc"
     spawn "xmobar ~/.xmonad/xmobarrc"
+    -- spawn "xautolock -time 5 -locker 'sudo pm-suspend' -corners ---- -notify 10 -notifier \"notify-send -t 10000 -i gtk-dialog-info 'Suspending in 10 seconds'\""
 
 myManageHook = composeAll
     [ className =? "MPlayer"        --> doFloat
