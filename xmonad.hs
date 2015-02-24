@@ -11,6 +11,9 @@ import XMonad.Config.Gnome
 import XMonad.Hooks.ManageDocks
 import XMonad.Layout.NoBorders
  
+-- For Java GUIs like MATLAB
+--import XMonad.Hooks.SetWMName
+ 
 keyBindings = [
     ("M-w", spawn "chromium"),
     ("M-S-w", spawn "chromium --incognito"),
@@ -19,14 +22,16 @@ keyBindings = [
     ]
 
 startup = do
+    --setWMName "LG3D"
     spawn "dispwin /etc/out.icc"
     spawn "xmobar ~/.xmonad/xmobarrc"
     -- spawn "xautolock -time 5 -locker 'sudo pm-suspend' -corners ---- -notify 10 -notifier \"notify-send -t 10000 -i gtk-dialog-info 'Suspending in 10 seconds'\""
 
 myManageHook = composeAll
-    [ className =? "MPlayer"        --> doFloat
-    , className =? "Gimp"           --> doFloat
-    , resource  =? "desktop_window" --> doIgnore ]
+    [ className =? "MPlayer"                --> doFloat
+    , className =? "Gimp"                   --> doFloat
+    , className =? "~/MATLAB/bin/matlab"    --> doFloat
+    , resource  =? "desktop_window"         --> doIgnore ]
 
 
 defaults = defaultConfig {
