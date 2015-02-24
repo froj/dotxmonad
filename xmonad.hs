@@ -5,6 +5,7 @@
  
 import XMonad
 import XMonad.Util.EZConfig -- used for key bindings
+import XMonad.Config.Gnome
 
 -- Allow management of dock programs.
 import XMonad.Hooks.ManageDocks
@@ -14,7 +15,7 @@ keyBindings = [
     ("M-w", spawn "chromium"),
     ("M-S-w", spawn "chromium --incognito"),
     ("M-e", spawn "nautilus --new-window"),
-    ("M-p", spawn "dmenu_run")
+    ("M-p", spawn "dmenu_recent_aliases")
     ]
 
 startup = do
@@ -32,6 +33,7 @@ defaults = defaultConfig {
         terminal           = "terminator",
         startupHook        = startup,
         borderWidth        = 1,
+        modMask            = mod1Mask,
         manageHook         = manageDocks <+> manageHook defaultConfig,
         layoutHook         = avoidStruts $ layoutHook defaultConfig,
         focusedBorderColor = "#000000",
