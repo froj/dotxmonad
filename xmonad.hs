@@ -12,7 +12,7 @@ import XMonad.Hooks.ManageDocks
 import XMonad.Layout.NoBorders
  
 -- For Java GUIs like MATLAB
---import XMonad.Hooks.SetWMName
+import XMonad.Hooks.SetWMName
  
 keyBindings = [
     ("M-w", spawn "chromium"),
@@ -22,7 +22,7 @@ keyBindings = [
     ]
 
 startup = do
-    --setWMName "LG3D"
+    setWMName "LG3D"
     spawn "dispwin /etc/out.icc"
     spawn "xmobar ~/.xmonad/xmobarrc"
     -- spawn "xautolock -time 5 -locker 'sudo pm-suspend' -corners ---- -notify 10 -notifier \"notify-send -t 10000 -i gtk-dialog-info 'Suspending in 10 seconds'\""
